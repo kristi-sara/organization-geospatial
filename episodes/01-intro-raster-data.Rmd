@@ -26,15 +26,15 @@ source("files/setup.R")
 ```
 
 ```{r load-libraries-1, results="hide", echo=FALSE, message=FALSE}
-library(raster)
-library(rgdal)
+library(terra)
 library(ggplot2)
+library(dplyr)
 ```
 
 ```{r, results="hide", echo=FALSE, message=FALSE}
 # load data needed to generate figures
 # for demonstration only - learners do not need this data for this lesson
-DSM_HARV <- raster("data/NEON-DS-Airborne-Remote-Sensing/HARV/DSM/HARV_dsmCrop.tif")
+DSM_HARV <- rast("data/NEON-DS-Airborne-Remote-Sensing/HARV/DSM/HARV_dsmCrop.tif")
 
 # convert to a df for plotting
 DSM_HARV_df <- as.data.frame(DSM_HARV, xy = TRUE)
@@ -116,7 +116,7 @@ information. Photogrammetric Engineering and Remote Sensing, v. 81, no. 5, p.
 
 ```{r classified-elevation-map, echo=FALSE, warning=FALSE, message=FALSE}
 # Load raster into R
-DSM_HARV <- raster("data/NEON-DS-Airborne-Remote-Sensing/HARV/DSM/HARV_dsmCrop.tif")
+DSM_HARV <- rast("data/NEON-DS-Airborne-Remote-Sensing/HARV/DSM/HARV_dsmCrop.tif")
 
 # convert to a df for plotting in two steps,
 # First, to a SpatialPointsDataFrame
