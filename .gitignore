@@ -57,3 +57,6 @@ _episodes/
 vendor/
 .docker-vendor/
 .*history
+
+knitr_code/
+code/R/dc-spatio-temporal-intro
